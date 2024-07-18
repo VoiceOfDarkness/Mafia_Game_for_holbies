@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block main %}
+<div class="container">
+  <h1 class="mb-4">Welcome to Mafia Game</h1>
+  <div class="actions">
+    <form action="{{ url_for('home_bp.create_game') }}" method="post">
+      <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">
+        Create Room
+      </button>
+    </form>
+    <hr />
+    <p>OR</p>
+    <hr />
+    <div class="join-room">
+      <form action="{{ url_for('home_bp.join_game') }}" method="post">
+        <input type="text" name="player-name" id="player-name" placeholder="Your Name" class="form-control mb-3" />
+        <input type="text" name="room-code" id="room-code" placeholder="Enter Room Code" class="form-control mb-2" />
+        <button type="submit" id="join-room" class="btn btn-success btn-lg btn-block">
+          Join Room
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+    <h1 class="mb-4">Host</h1>
+    <p>code: {{ code }}</p>
+    <div class="player-list">
+        {% for item in context %}
+        <div class="player-item">
+            <span>Player: {{ item.name }}</span>
+            <span>Role: {{ item.role }}</span>
+        </div>
+        {% else %}
+        <p>No players yet</p>
+        {% endfor %}
+    </div>
+    {% if status == "waiting" %}
+    <form action="{{ url_for('host_bp.start_game', code=code ) }}" method="post">
+        <button id="start-game" class="btn btn-primary btn-lg btn-block mt-3">Start Game</button>
+    </form>
+    {% else %}
+    <form action="{{ url_for('host_bp.end_game', code=code ) }}" method="post">
+        <button id="start-game" class="btn btn-primary btn-lg btn-block mt-3">End Game</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

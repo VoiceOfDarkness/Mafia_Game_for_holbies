@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+    <h2>Your Role</h2>
+    <div class="role">
+        <div class="card">
+            {% if not player.role %}
+            <div class="card-face card-front">
+                <h2>?</h2>
+            </div>
+            {% else %}
+            <div class="card-face card-back">
+                <h2>{{ player.role }}</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
