@@ -1,8 +1,6 @@
 from flask import render_template, redirect, url_for, request
 from flask.blueprints import Blueprint
 
-import icecream
-
 from utils.room_code import generate_room_code
 
 
@@ -31,7 +29,7 @@ def join_game():
 
     room = mongo.db.rooms.find_one({"host_code": int(code)})
     player = mongo.db.players.find_one({"name": name})
-    
+
     if not room:
         return "Room not found", 404
 
