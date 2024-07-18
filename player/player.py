@@ -1,3 +1,4 @@
+from bson.objectid import ObjectId
 from flask import render_template
 from flask.blueprints import Blueprint
 
@@ -8,8 +9,9 @@ player_bp = Blueprint(
 )
 
 
-@player_bp.route("/<name>")
-def player(name: str):
-    player = mongo.db.players.find_one_or_404({"name": name})
+@player_bp.route("/<id>")
+def player(id: str):
+    oid = ObjectId(id)
+    player = mongo.db.players.find_one_or_404({"_id": oid})
 
     return render_template("player.html", player=player)

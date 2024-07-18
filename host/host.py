@@ -1,6 +1,6 @@
 from typing import Dict
 
-from flask import render_template, redirect, url_for
+from flask import redirect, render_template, url_for
 from flask.blueprints import Blueprint
 
 from database import mongo
@@ -46,7 +46,7 @@ def start_game(code: str):
 
 @host_bp.route("/end-game/<code>", methods=["POST"])
 def end_game(code: str):
-    mongo.db.rooms.delete_many({"host_code": int(code)})
     mongo.db.players.delete_many({"room_code": code})
+    mongo.db.rooms.delete_many({"host_code": int(code)})
 
     return redirect(url_for("home_bp.index"))

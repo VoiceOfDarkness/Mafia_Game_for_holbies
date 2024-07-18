@@ -1,10 +1,8 @@
-from flask import render_template, redirect, url_for, request
+from flask import redirect, render_template, request, url_for
 from flask.blueprints import Blueprint
 
-from utils.room_code import generate_room_code
-
-
 from database import mongo
+from utils.room_code import generate_room_code
 
 home_bp = Blueprint("home_bp", __name__, url_prefix="/", template_folder="templates")
 
@@ -42,5 +40,7 @@ def join_game():
             {"host_code": int(code)},
             {"$push": {"players": {"player_id": player_id, "name": name, "role": None}}},
         )
+    else:
+        player_id = player["_id"]
 
-    return redirect(url_for("player_bp.player", name=name))
+    return redirect(url_for("player_bp.player", id=player_id))
