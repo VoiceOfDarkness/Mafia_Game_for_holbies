@@ -7,7 +7,7 @@ def assign_roles(players):
     roles_config = {
         range(1, 6): [("Mafia", 1), ("Don", 1), ("Doctor", 1), ("Sheriff", 1)],
         range(6, 11): [
-            ("Mafia", 1),
+            ("Mafia", 2),
             ("Don", 1),
             ("Doctor", 1),
             ("Sheriff", 1),
