@@ -30,20 +30,6 @@ files = [
 ]
 
 [[package]]
-name = "bson"
-version = "0.5.10"
-description = "BSON codec for Python"
-optional = false
-python-versions = "*"
-files = [
-    {file = "bson-0.5.10.tar.gz", hash = "sha256:d6511b2ab051139a9123c184de1a04227262173ad593429d21e443d6462d6590"},
-]
-
-[package.dependencies]
-python-dateutil = ">=2.4.0"
-six = ">=1.9.0"
-
-[[package]]
 name = "click"
 version = "8.1.7"
 description = "Composable command line interface toolkit"
@@ -372,20 +358,6 @@ test = ["pytest (>=7)"]
 zstd = ["zstandard"]
 
 [[package]]
-name = "python-dateutil"
-version = "2.9.0.post0"
-description = "Extensions to the standard Python datetime module"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
-files = [
-    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
-    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
-]
-
-[package.dependencies]
-six = ">=1.5"
-
-[[package]]
 name = "python-dotenv"
 version = "1.0.1"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -430,4 +402,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.9"
-content-hash = "a4228212f541f75258ff599776514b486b8ad25727b1ca4542429d91d40b364e"
+content-hash = "602e09c3bca940fdc1198b2dc2abd3dc004b0434fe22399c3ab310e187588c29"
