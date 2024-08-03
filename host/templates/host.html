@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="mb-4">Host</h1>
     <p>code: {{ code }}</p>
-    <div class="player-list">
+    <div id="player-list" class="player-list">
         {% for item in context %}
         <div class="player-item">
             <span>Player: {{ item.name }}</span>
@@ -24,4 +24,25 @@
     </form>
     {% endif %}
 </div>
+
+<script type="text/javascript" charset="utf-8">
+    var socket = io();
+    var roomCode = "{{ code }}";
+
+    socket.on('connect', function () {
+        socket.emit('join_room', { room: roomCode });
+    });
+
+    socket.on('update_player_list', function (data) {
+        var playerList = document.getElementById("player-list");
+        playerList.innerHTML = "";
+
+        data.players.forEach(function (player) {
+            var playerItem = document.createElement("div");
+            playerItem.className = "player-item";
+            playerItem.innerHTML = "<span>Player: " + player.name + "</span><span>Role: " + player.role + "</span>";
+            playerList.appendChild(playerItem);
+        });
+    });
+</script>
 {% endblock %}
