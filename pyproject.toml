@@ -15,6 +15,7 @@ gunicorn = "^22.0.0"
 flask-pymongo = "^2.3.0"
 isort = "^5.13.2"
 flask-socketio = "^5.3.6"
+gevent = "^24.2.1"
 
 
 [build-system]
