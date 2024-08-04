@@ -69,8 +69,6 @@ Welcome to the Mafia Game, a web-based version of the classic social deduction g
 ```
  Procfile
 ├── README.md
-│   ├── database.cpython-311.pyc
-│   └── websock.cpython-311.pyc
 ├── app.py
 ├── config.py
 ├── database.py
