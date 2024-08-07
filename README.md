@@ -1,5 +1,5 @@
 # Mafia Game
-[](https://github.com/VoiceOfDarkness/Mafia_Game_for_holbies/blob/master/static/img/Screenshot_7-8-2024_124354_mafia-for-holbies-4b73ef211906.herokuapp.com.jpeg)
+![](https://github.com/VoiceOfDarkness/Mafia_Game_for_holbies/blob/master/static/img/Screenshot_7-8-2024_124354_mafia-for-holbies-4b73ef211906.herokuapp.com.jpeg)
 Welcome to the Mafia Game, a web-based version of the classic social deduction game. This project allows players to join a room, receive random roles, and play the game in real-time.
 
 ## Table of Contents
